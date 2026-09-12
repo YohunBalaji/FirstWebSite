@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 640" width="100%" height="100%">
+  <defs>
+    <linearGradient id="certBg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f0fdf4" />
+    </linearGradient>
+    <linearGradient id="greenBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669" />
+      <stop offset="50%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+  </defs>
+  <rect x="10" y="10" width="880" height="620" rx="16" fill="url(#certBg2)" stroke="url(#greenBorder)" stroke-width="8"/>
+  <rect x="35" y="35" width="830" height="570" rx="10" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="450" y="160" text-anchor="middle" font-family="'Georgia', serif" font-size="20" letter-spacing="4" fill="#047857" font-weight="bold">STEM INNOVATION AWARD</text>
+  <text x="450" y="215" text-anchor="middle" font-family="'Georgia', serif" font-size="34" fill="#0f172a" font-weight="bold">Robotics &amp; Electronics Specialist</text>
+  <text x="450" y="265" text-anchor="middle" font-family="system-ui" font-size="16" fill="#64748b">AWARDED TO JUNIOR MAKER</text>
+  <text x="450" y="325" text-anchor="middle" font-family="'Georgia', serif" font-size="44" fill="#047857" font-weight="bold">Yohun Balaji</text>
+  <line x1="280" y1="350" x2="620" y2="350" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="450" y="405" text-anchor="middle" font-family="system-ui" font-size="17" fill="#334155">
+    In recognition of superior design, circuit prototyping on breadboard,
+  </text>
+  <text x="450" y="435" text-anchor="middle" font-family="system-ui" font-size="17" fill="#334155">
+    microcontroller sensor integration, and aerial drone piloting proficiency.
+  </text>
+  <g transform="translate(450, 520)">
+    <circle cx="0" cy="0" r="38" fill="url(#greenBorder)"/>
+    <circle cx="0" cy="0" r="32" fill="#fff"/>
+    <text x="0" y="6" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#065f46">EXCELLENCE</text>
+  </g>
+</svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080720" />
+      <stop offset="100%" stop-color="#141a45" />
+    </linearGradient>
+    <radialGradient id="droneGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#5cc9ff" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#5cc9ff" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" rx="20" fill="url(#bgGrad2)"/>
+  <circle cx="400" cy="210" r="190" fill="url(#droneGlow)" />
+  <ellipse cx="400" cy="210" rx="70" ry="35" fill="#1e293b" stroke="#5cc9ff" stroke-width="2"/>
+  <line x1="330" y1="210" x2="240" y2="150" stroke="#475569" stroke-width="6" stroke-linecap="round"/>
+  <line x1="470" y1="210" x2="560" y2="150" stroke="#475569" stroke-width="6" stroke-linecap="round"/>
+  <line x1="340" y1="225" x2="260" y2="280" stroke="#475569" stroke-width="6" stroke-linecap="round"/>
+  <line x1="460" y1="225" x2="540" y2="280" stroke="#475569" stroke-width="6" stroke-linecap="round"/>
+  <ellipse cx="240" cy="150" rx="55" ry="12" fill="none" stroke="#5cc9ff" stroke-width="3" stroke-dasharray="8 6"/>
+  <ellipse cx="560" cy="150" rx="55" ry="12" fill="none" stroke="#5cc9ff" stroke-width="3" stroke-dasharray="8 6"/>
+  <ellipse cx="260" cy="280" rx="55" ry="12" fill="none" stroke="#5cc9ff" stroke-width="3" stroke-dasharray="8 6"/>
+  <ellipse cx="540" cy="280" rx="55" ry="12" fill="none" stroke="#5cc9ff" stroke-width="3" stroke-dasharray="8 6"/>
+  <circle cx="400" cy="205" r="14" fill="#38bdf8"/>
+  <circle cx="400" cy="205" r="7" fill="#ffffff"/>
+  <rect x="40" y="35" width="180" height="36" rx="18" fill="rgba(92,201,255,0.15)" stroke="#5cc9ff"/>
+  <text x="56" y="58" fill="#5cc9ff" font-family="system-ui" font-weight="700" font-size="13">✈ AEROMODELLING</text>
+  <text x="40" y="415" fill="#ffffff" font-family="system-ui" font-weight="700" font-size="24">Mini Quadcopter Flight Control</text>
+  <text x="40" y="445" fill="#94a3b8" font-family="system-ui" font-size="15">Tello drone trajectory coding, stability physics &amp; aerial navigation</text>
+</svg>
