@@ -379,13 +379,54 @@
             Parents, mentors, and fellow young makers are always welcome to reach out regarding science fairs, robotics collaborations, or coding projects.
           </p>
 
-          <div class="contact-email">
-            <a href="mailto:yohunbalaji@gmail.com">yohunbalaji@gmail.com</a>
-          </div>
+          <!-- Interactive CAPTCHA Verification to protect email from bots -->
+          <div class="captcha-box" id="captchaBox">
+            <div class="captcha-badge">
+              <span>🛡️</span> Human Verification Required
+            </div>
+            <p class="captcha-instruction">
+              To prevent automated bots and web crawlers from scraping the email, please solve this quick math puzzle to reveal the contact email address:
+            </p>
 
-          <a href="mailto:yohunbalaji@gmail.com" class="btn btn-primary">
-            Send an Email Message ✉️
-          </a>
+            <!-- CAPTCHA Challenge Form -->
+            <div class="captcha-challenge" id="captchaChallenge">
+              <div class="math-question">
+                <span id="mathNum1">3</span>
+                <span class="math-op">+</span>
+                <span id="mathNum2">5</span>
+                <span class="math-op">=</span>
+                <input type="number" id="captchaInput" class="captcha-input" placeholder="?" min="0" max="99" autocomplete="off" inputmode="numeric">
+              </div>
+
+              <div class="captcha-buttons">
+                <button type="button" id="captchaVerifyBtn" class="btn btn-primary btn-sm">
+                  Verify &amp; Reveal Email 🔓
+                </button>
+                <button type="button" id="captchaRefreshBtn" class="btn btn-glass btn-sm" title="Get a new question">
+                  🔄 New Question
+                </button>
+              </div>
+
+              <div class="captcha-error" id="captchaError" style="display: none;"></div>
+            </div>
+
+            <!-- Revealed after successful verification -->
+            <div class="email-revealed" id="emailRevealed" style="display: none;">
+              <div class="verified-tag">✓ Human Verified</div>
+              <div class="contact-email" id="revealedEmailContainer"></div>
+              <div class="revealed-actions">
+                <a id="emailMailtoBtn" href="#" class="btn btn-primary">
+                  Open in Mail App ✉️
+                </a>
+                <button type="button" id="copyEmailBtn" class="btn btn-glass">
+                  Copy Email 📋
+                </button>
+              </div>
+              <div class="copy-success" id="copySuccess" style="display: none;">
+                ✓ Email copied to clipboard!
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -397,6 +438,12 @@
     <div class="container footer-inner">
       <div>
         © <span id="year"></span> Yohun Balaji. All rights reserved.
+      </div>
+      <!-- Visitor Counter Badge -->
+      <div class="footer-visitor glass-pill">
+        <span class="pulse-dot"></span>
+        <span>VISITORS:</span>
+        <img src="https://api.visitorbadge.io/api/visitors?path=yohunbalaji.portfolio&label=TOTAL&labelColor=%2314082e&countColor=%2300ffc2&style=flat-square" alt="Visitor Counter" class="visitor-badge-img">
       </div>
       <div>
         Hosted with ❤️ on <a href="https://github.com/yohunbalaji" target="_blank" style="color: var(--accent-cyan); text-decoration: underline;">GitHub Pages</a>

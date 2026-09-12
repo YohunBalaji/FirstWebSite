@@ -199,4 +199,104 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   });
+
+  // 8. Human Verification CAPTCHA & Email Reveal
+  const mathNum1 = document.getElementById("mathNum1");
+  const mathNum2 = document.getElementById("mathNum2");
+  const captchaInput = document.getElementById("captchaInput");
+  const captchaVerifyBtn = document.getElementById("captchaVerifyBtn");
+  const captchaRefreshBtn = document.getElementById("captchaRefreshBtn");
+  const captchaError = document.getElementById("captchaError");
+  const captchaChallenge = document.getElementById("captchaChallenge");
+  const emailRevealed = document.getElementById("emailRevealed");
+  const revealedEmailContainer = document.getElementById("revealedEmailContainer");
+  const emailMailtoBtn = document.getElementById("emailMailtoBtn");
+  const copyEmailBtn = document.getElementById("copyEmailBtn");
+  const copySuccess = document.getElementById("copySuccess");
+
+  let currentAnswer = 0;
+
+  const generateCaptcha = () => {
+    if (!mathNum1 || !mathNum2) return;
+    const n1 = Math.floor(Math.random() * 8) + 2; // 2 - 9
+    const n2 = Math.floor(Math.random() * 8) + 2; // 2 - 9
+    currentAnswer = n1 + n2;
+    mathNum1.textContent = n1;
+    mathNum2.textContent = n2;
+    if (captchaInput) {
+      captchaInput.value = "";
+      captchaInput.focus();
+    }
+    if (captchaError) {
+      captchaError.style.display = "none";
+      captchaError.textContent = "";
+    }
+  };
+
+  generateCaptcha();
+
+  if (captchaRefreshBtn) {
+    captchaRefreshBtn.addEventListener("click", generateCaptcha);
+  }
+
+  const verifyCaptcha = () => {
+    if (!captchaInput) return;
+    const userVal = parseInt(captchaInput.value.trim(), 10);
+    if (isNaN(userVal)) {
+      showError("Please enter your answer.");
+      return;
+    }
+
+    if (userVal === currentAnswer) {
+      // Decode obfuscated email string dynamically
+      const emailParts = ["eW9odW5iYWxh", "amk=", "QGdtYWlsLmNvbQ=="];
+      const decodedEmail = atob(emailParts[0] + emailParts[1] + emailParts[2]);
+
+      // Hide challenge & show verified email
+      captchaChallenge.style.display = "none";
+      emailRevealed.style.display = "flex";
+
+      revealedEmailContainer.innerHTML = `<a href="mailto:${decodedEmail}">${decodedEmail}</a>`;
+      if (emailMailtoBtn) {
+        emailMailtoBtn.href = `mailto:${decodedEmail}`;
+      }
+
+      if (copyEmailBtn) {
+        copyEmailBtn.addEventListener("click", () => {
+          navigator.clipboard.writeText(decodedEmail).then(() => {
+            if (copySuccess) {
+              copySuccess.style.display = "block";
+              setTimeout(() => {
+                copySuccess.style.display = "none";
+              }, 3500);
+            }
+          }).catch(() => {
+            alert(`Email address: ${decodedEmail}`);
+          });
+        });
+      }
+    } else {
+      showError("Incorrect answer. Try again!");
+      generateCaptcha();
+    }
+  };
+
+  const showError = (msg) => {
+    if (captchaError) {
+      captchaError.textContent = msg;
+      captchaError.style.display = "block";
+    }
+  };
+
+  if (captchaVerifyBtn) {
+    captchaVerifyBtn.addEventListener("click", verifyCaptcha);
+  }
+
+  if (captchaInput) {
+    captchaInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        verifyCaptcha();
+      }
+    });
+  }
 });
